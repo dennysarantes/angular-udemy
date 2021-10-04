@@ -32,6 +32,7 @@ export class AuthGuard implements CanActivate {
       }),
       map(user => {
         const isAuth = !!user;
+        console.log('verificando se usuário está logado...' + isAuth);
         if (isAuth) {
           console.log('usuário já logou!')
           return true;

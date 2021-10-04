@@ -70,6 +70,12 @@ export function authReducer(
           authError : null
         }
 
+        case AuthActions.AUTO_LOGIN :
+        return {
+          ...state,
+          loading : true
+        }
+
         case AuthActions.SIGNUP_SUCCESS :
           console.log('Token recebido na store logo após SIGNUP> ' + action.payload.token);
           const userSignuped = new User(

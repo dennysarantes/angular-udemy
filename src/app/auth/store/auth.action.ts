@@ -4,7 +4,8 @@ export const SIGNUP_START = '[Auth] Signup start'
 export const SIGNUP_SUCCESS = '[Auth] Signup success'
 export const SIGNUP_FAIL = '[Auth] Signup fail'
 export const LOGIN_START = '[Auth] Login_Start';
-export const LOGIN = 'LOGIN'; //Esse seria o login success, mas o instrutor ficou com preguiça de renomear
+export const LOGIN = 'LOGIN'; //Ess seria o login success, mas o instrutor ficou com preguiça de renomear
+export const AUTO_LOGIN = '[Auth] Auto Login'
 export const LOGIN_FAIL = '[Auth] Login fail'
 export const LOGOUT = 'LOGOUT';
 export const CLEAR_ERROR = '[Auth] Clear error'
@@ -48,6 +49,11 @@ export class SignupStart implements Action {
   }) {}
 }
 
+
+export class AutoLogin implements Action {
+  readonly type : string = AUTO_LOGIN;
+}
+
 export class SignupSuccess implements Action {
   readonly type : string = SIGNUP_SUCCESS;
 
@@ -78,4 +84,5 @@ export type AuthListActionTypes = Login
                                   | SignupSuccess
                                   | SignupFail
                                   | ClearError
+                                  | AutoLogin
                                   | any;
